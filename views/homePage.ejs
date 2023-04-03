@@ -1,0 +1,50 @@
+<!-- HTMl section for main home page -->
+<link rel="stylesheet" href="/css/home.css">  
+        <div class="form_class">
+            <form action="/create_todo" method="POST">
+            <div class="desc_Class mb-4 rounded">
+                <input type="textarea" required name="desc" placeholder="Note"> 
+            </div>
+            <div class="select_and_input">
+                <select name="category" required>
+                    <option value="" disabled selected>Category</option>
+                    <option>Personal</option>
+                    <option>Work</option>
+                    <option>Buisness</option>
+                    <option>Others</option>
+                </select>
+                <input class="datesValues" type="date" name="dateValue" required>
+            </div>
+                <button class="btn btn-outline-info buttonDesign" id="submitButton" type="submit">Add Task</button>
+            </form>
+                
+        </div>
+
+<!-- for displaying TODO lists -->
+        <div class="mainDiv">
+            <% for(let i of todoList) {  %>
+                <div class="taskDiv">
+                    <div class="taskHead">
+                        <input type="checkbox" name="delechack" class="delechack" onclick="checkedOrNot()" uid = <%= i._id %> >
+                        <a href="/delete/<%=i._id%>">&times;</a>
+                    </div>
+                    <div class="name_and_dueDate">
+                        <p id=<%= i._id %>  uid = <%= i._id %> class="dispdsc"><%= i.desc %></p>
+                    </div>
+                    <div class="taskFoot">
+                        <p id=<%= i._id + i.dueDate %> class="dueDate"  ><%= i.dueDate %></p>
+
+                        <div class="catesec">
+                            <%= i.category %>
+                        </div>
+                    </div>
+                   
+                    </div>
+                <% } %>
+        </div>
+
+
+
+    <script src="/js/script.js"></script>
+    
+   
