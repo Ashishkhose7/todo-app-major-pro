@@ -1,7 +1,7 @@
 {
-  "name": "codingninjas todo app",
+  "name": "todo app",
   "version": "1.0.0",
-  "description": "coding ninjas mini project one todo application",
+  "description": "mini project one todo application",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
